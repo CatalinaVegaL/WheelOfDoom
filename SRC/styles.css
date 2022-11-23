@@ -17,6 +17,12 @@ body {
     height: 100vh;
     background-size: cover;
     background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+
+
 }
 
 /* medidas de la imagen del logo whell of */ 
@@ -38,8 +44,7 @@ a {
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 5vmin;
-    
+    border-radius: 3vmin;
 }
 
 .btn {
@@ -55,6 +60,8 @@ a {
     color: white;
     
 }
+
+
 
 
 
