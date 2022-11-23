@@ -8,6 +8,26 @@ body {
 }
 
 /* ------- Estilos pagina 1 ------- */
+/*imagen de la imagen de fondo----*/
+.seccion1 {
+    background-image: url(../IMG/fondo1.png);
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+  
+    background-position: center;
+}
+
+/* medidas de la imagen del logo whell of */ 
+.logo img{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: auto;
+    width: 200px;
+    height: 200px;
+
+}
 
 /* ------- Estilos pagina 2 ------- */
 
