@@ -6,9 +6,197 @@
 body {
     font-family: 'Alatsi', sans-serif;
 }
+body{
+    background-image: url("../IMG/fondo1.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
 
 /* ------- Estilos pagina 1 ------- */
 
-/* ------- Estilos pagina 2 ------- */
+/* -------------------------------------------------------- Estilos pagina 2 ------------------------- */
+.btn-play {    
+    background: #57268B;
+    border: 3.07399px solid #FFFFFF;
+    box-shadow: inset 0px 12.296px 12.296px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    color: #FFFFFF;
+    width: 50%;
+    min-height: 40px;
+}
 
-/* ------- Estilos pagina 3 ------- */
+.btn-play:hover{
+    color: #FFFFFF;
+    background: #7600f4;
+}
+
+.contenido {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    margin: auto;
+    height: 100vh;
+}
+
+.bg-green{
+    background: #6AD73B;
+    border: 3px solid #008D00;
+    border-radius: 10px;
+    width: 100%;
+    padding: 0%;
+}
+
+.bg-green > input {
+    background-color: transparent;
+    border: transparent;
+    color: #FFFFFF;
+    width: 80%;
+    outline: none;
+    font-weight: bold;
+}
+.bg-green > input::placeholder {
+    color: #FFFFFF;
+}
+
+.bg-green > input::selection {
+    border: transparent;
+}
+
+.name {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 1% 3%;
+}
+
+.bg-light-green {
+    background: rgba(248, 251, 134, 0.64);
+    border: 2.17429px solid #008D00;
+    border-radius: 10px;
+    width: 84%;
+    height: 300px;
+    margin: 8%;
+    overflow: auto;
+}
+
+.more{
+    background-color: transparent;
+    border: 0;
+    color: #FFFFFF;
+    font-weight: bold;
+}
+
+img{
+    width: 20% !important;
+} 
+
+.list-group-item {
+    color: #008D00;
+    background-color: transparent;
+    border: 1px solid rgb(141 233 14);
+    border-right: 0px;
+    border-left: 0px;
+    border-top: 0px;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+@media (max-height: 570px) and (max-width: 320px) and (orientation:portrait) {     
+    .bg-light-green {
+        height: 200px;
+    }
+
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (max-width: 576px) and (orientation:portrait) {     
+    img{
+        width: 70% !important;
+    }
+
+}
+@media (max-width: 576px) and (orientation:landscape) {     
+
+    .bg-light-green {
+        height: 100px;
+    }
+    body{
+        background: url("../IMG/fondo2.png");
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+    }
+
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 576px) and (max-width: 768px) and (orientation:portrait) {     
+    img{
+        width: 70% !important;
+    }
+
+
+}
+@media (min-width: 576px) and (max-width: 768px) and (orientation:landscape) {     
+
+    .bg-light-green {
+        height: 100px;
+    }
+    body{
+        background: url("../IMG/fondo2.png");
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 768px) and (max-width: 992px) and (orientation:portrait) { 
+    img{
+        width: 60% !important;
+    }
+}
+@media (min-width: 768px) and (max-width: 992px) and (orientation:landscape) { 
+
+    .bg-light-green {
+        height: 120px;
+    }
+    body{
+        background: url("../IMG/fondo2.png");
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+    }
+
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 992px) and (max-width: 1200px) and (orientation:portrait){ 
+    img{
+        width: 50% !important;
+    }
+    .mt-2 {
+        margin-top: 1rem !important;
+    }
+}
+
+
+
+@media (min-width: 1200px) {
+
+    .bg-light-green {
+        height: 300px;
+    }
+    .mt-2 {
+        margin-top: 1rem !important;
+    }
+    img{
+        width: 50% !important;
+    }
+    body{
+        background: url("../IMG/fondo2.png");
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+    }
+}
+
+/* ------------------------------------------------ Estilos pagina 3 ---------------------------------- */
