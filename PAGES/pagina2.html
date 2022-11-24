@@ -18,7 +18,8 @@
     <link rel="stylesheet" href="../SRC/styles.css">
     <!-- funtions -->
     <script src="../SRC/main.js" charset="utf-8"></script>
-
+    <!-- Fuentes -->
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container-fluid main">
@@ -26,16 +27,17 @@
             <div class="col"></div>
             <div class="col-lg-8 col-xl-6 col-xxl-5 col-md-8 col-sm-10 col-12">
                 <div class="row contenido">
-                        <img src="../IMG/logo.png" alt="">
-                        <div class="bg-green name mt-2">
-                            <input type="text" placeholder="ADD ZOMBIE’S NAMES">
-                            <button class="more">+</button>
+                        <h1>Wheel of happy bunny</h1>
+                        <div class="bg-purple name mt-2">
+                            <input type="text" placeholder="ADD NAMES" id="name">
+                            <button class="more" id="player_add">+</button>
                         </div>
-                        <div class="bg-green mt-2">
-                            <div class="bg-light-green">
-                                <ul class="list-group">
-                                    <li class="list-group-item">Cras justo odio<i class="bi bi-trash-fill player_delete"></i></li> 
-                                    <li class="list-group-item" id="0">Dapibus ac facilisis in<i class="bi bi-trash-fill player_delete"></i></li>
+                        <div class="invalid-feedback">
+                            Proporciona un nombre válido.
+                        </div>
+                        <div class="bg-purple mt-2" >
+                            <div class="bg-light-purple">
+                                <ul class="list-group" id="list-group">
                                   </ul>
                             </div>
                         </div>
