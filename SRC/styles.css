@@ -6,37 +6,32 @@
 
 body {
     font-family: 'Alatsi', sans-serif;
-    background-color: black;
+    background-image: url(../IMG/fondo1.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 /* ------- Estilos pagina 1 ------- */
-/*imagen de la imagen de fondo----*/
+
 .contenedor{
-    background-image: url(../IMG/fondo1.png);
     width: 100vw;
     height: 100vh;
-    background-size: cover;
-    background-position: center;
     display: flex;
     align-items: center;
-    justify-content: space-around;
     flex-direction: column;
-
-
+    justify-content: space-around;
 }
 
 /* medidas de la imagen del logo whell of */ 
 .logo img{
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin: auto;
     width: 200px;
     height: 200px;
 }
 
 a {
     text-decoration:none;
+    color: white;
 }
 
 .btn,
@@ -44,27 +39,31 @@ a {
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 3vmin;
+    border-radius: 2vmin;
 }
 
 .btn {
     background-color: #D9D9D9;
-    height: 10vh;
-    width: 60vw;
+    height: clamp(10px,32vmin,62px);
+    width: clamp(192px,37vmin,400px);
 }
 
 .btn-ctn {
     background-color: #57268B;
-    height: 8vh;
-    width: 58vw;
-    color: white;
-    
+    height: clamp(10px,30vmin,50px);
+    width: clamp(180px,35vmin,400px);
+    border: 0.1vmin solid #000000;
 }
-
-
-
-
 
 /* ------- Estilos pagina 2 ------- */
 
 /* ------- Estilos pagina 3 ------- */
+
+
+/* ------- MediaQuerys ------- */
+
+@media (min-width: 767px) {
+    body {
+        background-image: url(../IMG/fondo2.png);
+    }
+}
