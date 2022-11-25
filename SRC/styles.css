@@ -201,3 +201,21 @@ h1{
 }
 
 /* ------------------------------------------------ Estilos pagina 3 ---------------------------------- */
+/* ------- Estilos pagina 3 ------- */
+/* Yeray */
+.jumping-bunny{
+    width: 40px;
+    height: 20px;
+}
+#bunny{
+    width: 40px;
+    height: 20px;
+    position: absolute;
+    background-color: aqua;
+}
+#cont{
+    width: 500px;
+    height: 500px;
+    position: relative;
+    background-color: azure;
+}
