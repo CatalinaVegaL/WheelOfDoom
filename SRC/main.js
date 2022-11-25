@@ -1,4 +1,6 @@
-//pagina2------------------
+//----------------------------------------------------------------
+//------------------------------ PÁGINA 2 ------------------------
+//----------------------------------------------------------------
 
 // --------------------------------------------------
 // ---------------------  Atributos -----------------
@@ -10,7 +12,9 @@ var players = [];
 window.addEventListener("load", function(){
     // --------------------------------------------------------
     // Add Player
-        addPlayer();    
+        addPlayer();
+    // Button Play
+        btnPlay();    
 
 
 });
@@ -19,12 +23,14 @@ function addPlayer() {
     var playerAdd =  document.getElementById("player_add");
     playerAdd.addEventListener('click', () => {
         var player = document.getElementById("name");
+        var validation = document.querySelector(".invalid-feedback");
         if (player.value.trim() == 0) {
-            console.log("vacío");
+            validation.style.display = 'block';
         } else {
             players.push(player.value);
             player.value = "";
             showPlayers();
+            validation.style.display = 'none';
         }
 
     });
@@ -54,11 +60,22 @@ function showPlayers() {
 };
 
 
+//--------------------------------------------------
+function btnPlay() {
+    var btn = document.querySelector('#btn_play');
+    btn.addEventListener('click', () => {
+        if(players.length == 0){
+            document.querySelector(".invalid-feedback").style.display = 'block';
+        } else {
+            window.location.replace("pagina3.html");
+        }
+    });
+}
 //--------------------CODE YERAY------------------
-window.onload = function(){
+/* window.onload = function(){
     var position = 0;
     //bunny
-    var bunny = document.getElementById('conejo');
+    var cont= document.getElementById('cont');
     var time = setInterval(move,10);
 
     function move(){
@@ -67,7 +84,7 @@ window.onload = function(){
         }
         else{
             position += 1;
-            bunny.style.left = position+ 'px';
+             cont.style.left = position+ 'px'; 
         }
     }
-}
+} */

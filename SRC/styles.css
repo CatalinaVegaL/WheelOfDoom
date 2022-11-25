@@ -5,29 +5,91 @@
 :root{
     --color-de-letra:rgb(255, 255, 255);
 }
+/*------------------------estilos pagina 1------------------*/
 body {
     font-family: 'Press Start 2P', cursive;
     background-image: url(../IMG/fondo-gif.gif);
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
-    width: 1000vw;
-    height: 100vh;
+    background-repeat: center;
 }
-h1{
+.titulo {
     color: var(--color-de-letra);
     display: flex;
     flex-wrap: wrap;
-  text-align: center;
-  width: 300px;
- margin: auto;
-  font-size: 40px;
-
+    text-align: center;
+    width: 300px;
+    margin: auto;
+    font-size: 40px;
+    -webkit-text-stroke:1px black;
 }
 /* ------- Estilos pagina 1 ------- */
+/*imagen de la imagen de fondo----*/
+.fondo{
+    background-color: rgba(12, 9, 9, 0.7);
+    border-radius: 30px;
+    width: 300px;
+    height: 500px;
+    display: block;
+    margin: auto;
+    padding-top: 40px;
+}
+
+.contenedor{
+    width: 100vw;
+    height: 100vh;
+    background-position: center;
+    display: flex;
+    justify-content: space-around;
+}
+
+/* medidas del boton play*/ 
+
+a {
+    text-decoration:none;
+}
+
+.btn,
+.btn-ctn {
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    border-radius: 2vmin;
+}
+
+.btn {
+    background-color: #D9D9D9;
+    margin-top: 180px;
+    height: 10vh;
+    width: 60vw;
+    height: clamp(10px,32vmin,62px);
+    width: clamp(192px,37vmin,400px);
+}
+
+.btn-ctn {
+    background-color: #57268B;
+    height: 8vh;
+    width: 58vw;
+    height: clamp(10px,30vmin,50px);
+    width: clamp(180px,35vmin,400px);
+    border: 0.1vmin solid #000000;
+}
+
+
+/*---------estilos pagina 2---------------*/
+
+.body {
+    background-image: url(../IMG/fondo2.png);
+    background-size: cover;
+    background-position: center;
+}
+
+
 
 /* -------------------------------------------------------- Estilos pagina 2 ------------------------- */
-.btn-play {    
+.btn-play{    
     background: #57268B;
     border: 3.07399px solid #28123F;
     box-shadow: inset 0px 12.296px 12.296px rgba(0, 0, 0, 0.25);
@@ -48,11 +110,11 @@ h1{
     margin: auto;
     height: 100vh;
 }
-h1{
+.title {
     text-align: center;
-    margin: 0;
+    color: #FFFFFF;
 }
-.bg-purple{
+.bg-purple {
     background: #57268B;
     border: 3px solid #28123F;
     border-radius: 10px;
@@ -108,7 +170,6 @@ h1{
 }
 
 .invalid-feedback {
-    display: block;
     width: 100%;
     font-size: .8em;
     color: #FFFFFF;
@@ -186,22 +247,26 @@ h1{
     
 }
 
+/* ------- MediaQuerys ------- */
+/* ------- Estilos pagina 1------- */
+@media (min-width: 568px) {
+    .fondo{
+        width: 600px;
+        height: 300px;
+        padding-top: 60px;
+    }
+    h1{
+        width:600px;
+    }
+    .btn {
+        margin-top: 100px;
+        height: 10vh;
+        width: 60vw;
+        height: clamp(10px,32vmin,62px);
+        width: clamp(192px,37vmin,400px);
+    }
+}
+
 /* ------------------------------------------------ Estilos pagina 3 ---------------------------------- */
 /* ------- Estilos pagina 3 ------- */
 /* Yeray */
-.jumping-bunny{
-    width: 40px;
-    height: 20px;
-}
-#bunny{
-    width: 40px;
-    height: 20px;
-    position: absolute;
-    background-color: aqua;
-}
-#cont{
-    width: 500px;
-    height: 500px;
-    position: relative;
-    background-color: azure;
-}
