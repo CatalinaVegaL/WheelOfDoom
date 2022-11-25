@@ -1,16 +1,31 @@
+
+
 *{
     padding: 0;
     margin: 0;
 }
+:root{
+    --color-de-letra:rgb(255, 255, 255);
 
-body {
-    font-family: 'Press Start 2P',cursive;
 }
-body{
-    background-image: url("../IMG/fondo2.png");
+body {
+    font-family: 'Press Start 2P', cursive;
+    background-image: url(../IMG/fondo-gif.gif);
     background-size: cover;
     background-position: center;
-    color: #FFFFFF;
+    background-repeat: no-repeat;
+    width: 1000vw;
+    height: 100vh;
+}
+h1{
+    color: var(--color-de-letra);
+    display: flex;
+    flex-wrap: wrap;
+  text-align: center;
+  width: 300px;
+ margin: auto;
+  font-size: 40px;
+
 }
 
 /* ------- Estilos pagina 1 ------- */
