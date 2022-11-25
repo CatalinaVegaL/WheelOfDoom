@@ -50,3 +50,9 @@ body{
   font-weight: 800;
   -webkit-text-stroke:1.5px black;
 }
+@media (max-height: 570px) and (max-width: 320px) and (orientation:portrait) {     
+  .kill{
+    
+  }
+
+}
