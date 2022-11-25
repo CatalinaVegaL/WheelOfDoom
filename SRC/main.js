@@ -19,9 +19,14 @@ function addPlayer() {
     var playerAdd =  document.getElementById("player_add");
     playerAdd.addEventListener('click', () => {
         var player = document.getElementById("name");
-        players.push(player.value);
-        player.value = "";
-        showPlayers();
+        if (player.value.trim() == 0) {
+            console.log("vacío");
+        } else {
+            players.push(player.value);
+            player.value = "";
+            showPlayers();
+        }
+
     });
 };
 
@@ -46,7 +51,6 @@ function showPlayers() {
     );
     document.getElementById("list-group").innerHTML = html;
     deletePlayer(); 
-}
-
+};
 
 
