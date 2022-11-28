@@ -69,7 +69,7 @@ function btnPlay() {
 }
 //-------------------Page 3---------------------
 //---------------Variables page 3-----------------
-var sizeWidthWindow = window.innerWidth / 2;
+var sizeWidthWindow = window.innerWidth / 2.3;
 
 //-----------------Moving bunny-------------------
 window.onload = function moveBunny() {
@@ -81,6 +81,8 @@ window.onload = function moveBunny() {
     function move() {
         if (pos >= sizeWidthWindow) {
             clearInterval(t);
+            let bunnyJumping = document.getElementsByClassName('bunny-start');
+            bunnyJumping.innerHTML = `<img src="../IMG/bunny-normal.gif"`;
         } else {
             pos += 1;
             box.style.left = pos + "px";
@@ -91,7 +93,7 @@ window.onload = function moveBunny() {
 const gunContainer = document.getElementById("gunContainer");
 const killButton = document.getElementById("kill");
 killButton.addEventListener("click", () => {
-    gunContainer.innerHTML = '<img src="../IMG/gun-shoot-reload.gif"';
+    gunContainer.innerHTML = `<img src="../IMG/gun-shoot-reload.gif"`;
 });
 
 function killPlayer() {

@@ -72,6 +72,36 @@ body{
   width: 100%;
 }
 /*------------------MEDIA QUERIES------------------*/
+@media (max-width: 1024px){
+  /*Bunny styles*/
+  #container{
+    height: 230px;
+    top:50%;
+  }
+  #box{
+    width: 130px;
+    height: 230px;
+    position: absolute;
+  }
+}
+@media (max-width: 425px){
+  /*Bunny styles*/
+  #container{
+    height: 200px;
+    top:58%;
+  }
+  #box{
+    width: 100px;
+    height: 170px;
+    position: absolute;
+  }
+}
+@media (min-width: 1440px){
+  /*Bunny styles*/
+  #container{
+    top:45%;
+  }
+}
 @media (max-height: 570px) and (max-width: 320px) and (orientation:portrait) {     
-  
+
 }
