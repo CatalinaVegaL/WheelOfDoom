@@ -13,7 +13,10 @@ body {
     background-position: center;
     background-repeat: center;
 }
-/* ------- Page 1 ------- */
+
+
+
+/* --------------------------- Page 1 --------------------- */
 .contenedor{
     width: 100vw;
     height: 100vh;
@@ -46,7 +49,7 @@ a {
     text-decoration:none;
 }
 .btn,
-.btn-ctn {
+.btn-ctn{
     color: white;
     display: flex;
     align-items: center;
@@ -59,7 +62,7 @@ a {
     height: clamp(10px,32vmin,62px);
     width: clamp(192px,37vmin,400px);
 }
-.btn-ctn {
+.btn-ctn{
     background-color: #57268B;
     height: 8vh;
     width: 58vw;
@@ -80,6 +83,9 @@ a {
     background-position: center;
 }
 /* -------------------------------------------------------- Estilos pagina 2 ------------------------- */
+.row{
+    z-index: 2;
+}
 .btn-play{    
     background: #57268B;
     border: 3.07399px solid #28123F;
@@ -166,6 +172,19 @@ a {
     font-size: .8em;
     color: #FFFFFF;
 }
+.container-bunny{
+    position: absolute;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    width: 90%;
+    height: 90%;
+    z-index: -20;
+}
+.bunny-chilling{
+    width: 150px;
+}
+
 @media (max-height: 570px) and (max-width: 320px) and (orientation:portrait) {     
     .bg-light-purple {
         height: 200px;
@@ -220,7 +239,6 @@ a {
     .mt-2 {
         margin-top: 1rem !important;
     }
-    
 }
 /* ------- MediaQuerys ------- */
 /* ------- Estilos pagina 1------- */

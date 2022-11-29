@@ -15,7 +15,9 @@
 <body>
 <!--   Moving bunny  -->
 <div id="container">
-  <div id="box"><img src="../IMG/bunny-start.gif" alt="conejo saltando" class="bunny-start"></div>
+  <div id="box">
+    <img src="../IMG/bunny-start.gif" alt="conejo saltando" class="bunny-start">
+  </div>
 </div>
 <!-- Kill button -->
     <div class="kill">
@@ -27,6 +29,33 @@
         <img src="../IMG/gun-static.gif" alt="StaticGun" />
       </div>
     </div>
-    <script src="../SRC/main.js" charset="utf-8"></script>
+
+        <!--seccion del Modal para jugador muerto-->
+        <section class="capa">
+          <div class="modal">
+              <div class="modal-fondo">
+              </div>
+              <a href="pagina3.html">
+                  <div class="boton">CONTINUE</div>
+              </a>
+          </div>
+      </section>
+      <!--seccion del modal game over-->
+  
+      <section class="capa2">
+          <div class="modal-2">
+              <div class="modal-fondo-2">
+                  <p>All players has been <br>deleted</p>
+                  <a href="#">Game Over</a>
+              </div>
+            
+              <a href="../PAGES/pagina2.html">
+                  <div class="boton">CONTINUE</div>
+              </a>
+              
+          </div>
+      </section>
+
+    <script src="../SRC/main.js" charset="utf-8"></script>  
   </body>
 </html>

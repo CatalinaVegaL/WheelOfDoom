@@ -1,35 +1,30 @@
-//----------------------------------------------------------------
-//------------------------------ PÁGINA 2 ------------------------
-//----------------------------------------------------------------
-
-let deadPlayers = [];
-let sacrificedPlayer = document.getElementById("list-group");
-// --------------------------------------------------
 // ---------------------  Atributos -----------------
-// --------------------------------------------------
+// -------------------------------------------------pl-
 var players = [];
 // --------------------------------------------------
 // ------- Se ejecuta al cargar la página web -------
 // --------------------------------------------------
 window.addEventListener("load", function () {
-    // --------------------------------------------------------
-    // Add Player
     addPlayer();
-    // Button Play
     btnPlay();
 });
 function addPlayer() {
-    var playerAdd = document.getElementById("player_add");
+    let playerAdd = document.getElementById("player_add");
     playerAdd.addEventListener("click", () => {
-        var player = document.getElementById("name");
-        var validation = document.querySelector(".invalid-feedback");
+        let player = document.getElementById("name");
+        let validation = document.querySelector(".invalid-feedback");
+
         if (player.value.trim() == 0) {
             validation.style.display = "block";
         } else {
-            players.push(player.value);
+            players.push({
+                playerName: player.value,
+                isDead: false,
+            });
             player.value = "";
             showPlayers();
             validation.style.display = "none";
+            savePlayers(players);
         }
     });
 }
@@ -37,8 +32,9 @@ function deletePlayer() {
     var playerDelete = document.querySelectorAll(".player_delete");
     playerDelete.forEach((e) => {
         e.addEventListener("click", (e) => {
-            players = players.filter((player) => player != e.target.id);
+            players = players.filter((player) => player.playerName != e.target.id);
             showPlayers();
+            savePlayers(players);
         });
     });
 }
@@ -48,11 +44,12 @@ function showPlayers() {
     players.forEach((player) => {
         html +=
             '<li class="list-group-item">' +
-            player +
+            player.playerName +
             '<i class="bi bi-trash-fill player_delete" id="' +
-            player +
+            player.playerName +
             '"></i></li>';
     });
+    
     document.getElementById("list-group").innerHTML = html;
     deletePlayer();
 }
@@ -67,6 +64,12 @@ function btnPlay() {
         }
     });
 }
+//------------Guardar la información en el local storage
+function savePlayers(object){
+    let localPlayers=object;
+    localStorage.setItem("playersKey", JSON.stringify(localPlayers));
+}
+
 //-------------------Page 3---------------------
 //---------------Variables page 3-----------------
 var sizeWidthWindow = window.innerWidth / 2.3;
@@ -80,26 +83,58 @@ window.onload = function moveBunny() {
 
     function move() {
         if (pos >= sizeWidthWindow) {
-            clearInterval(t);
-            let bunnyJumping = document.getElementsByClassName('bunny-start');
-            bunnyJumping.innerHTML = `<img src="../IMG/bunny-normal.gif"`;
-        } else {
+            clearInterval(t);          
+            box.innerHTML = '<img src="../IMG/bunny-normal.gif" alt="conejo saltando" class="bunny-start">';
+            cancelKill();
+
+        }else {
             pos += 1;
             box.style.left = pos + "px";
         }
     }
 };
+
+/*--------- Kill'nt bunny------------*/
+function cancelKill (){
+    const killButton = document.getElementById("kill");
+    killButton.addEventListener("click", () => {
+        const gunContainer = document.getElementById("gunContainer");
+        gunContainer.innerHTML = '<img src="../IMG/gun-shoot-reload.gif" alt="StaticGun" />';
+        box.innerHTML = '<img src="../IMG/blood-explotion.gif" alt="explotion" class="blood"/>';
+        killPlayer();
+    }); 
+}
 /*--------- Kill players ------------ */
-const gunContainer = document.getElementById("gunContainer");
-const killButton = document.getElementById("kill");
-killButton.addEventListener("click", () => {
-    gunContainer.innerHTML = `<img src="../IMG/gun-shoot-reload.gif"`;
-});
 
 function killPlayer() {
-    let randomIndex = 0 + Math.floor(Math.random() * players.length);
-    // let selectedPlayer= players[randomIndex]
-    // deadPlayers.push(players[]);
-    if (sacrificedPlayer.length > 0) {
+    let playersStorage = JSON.parse(localStorage.getItem("playersKey"));
+    let randomIndex = 0 + Math.floor(Math.random() * playersStorage.length); 
+    let selectedPlayer= playersStorage[randomIndex].playerName;
+    
+    playersStorage = playersStorage.filter((player) => player.playerName != selectedPlayer)
+    savePlayers(playersStorage);
+    if(playersStorage.length == 0) {
+        //muestra la modal de Game Over
+        function mostarModal() {
+            document.querySelector(".capa2").style.display = "flex";
+        }
+        //Ejecuta la función en x segundos
+        setTimeout(mostarModal, 800);        
+    } else {
+        //Mensaje de la modal para jugador muerto
+        let mensaje = `<p>${selectedPlayer} has been deleted <br> ${playersStorage.length} players left</p>`
+        let modalFondo = document.querySelector(".modal-fondo");
+        modalFondo.innerHTML = mensaje;
+        //Muestra la modal de jugador muerto
+        function mostarModal() {
+            document.querySelector(".capa").style.display = "flex";
+        }
+        setTimeout(mostarModal, 800);
     }
+}
+
+/*---------Next bunny--------- */
+
+function nextPlayer(){
+    
 }

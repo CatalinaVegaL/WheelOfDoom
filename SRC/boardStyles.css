@@ -5,6 +5,9 @@
   box-sizing: border-box;
   overflow: hidden;
 }
+:root{
+  --color-de-letra:rgb(255, 255, 255);
+}
 body{
   font-family: 'Press Start 2P', cursive;
   background-image:url(../IMG/fondo2.png);
@@ -12,7 +15,7 @@ body{
   background-size: cover;
   background-position: center;
   object-fit: cover;
-  width: 100%;
+  width: 100vw;
   height: 100vh;
 }
 /*Bunny styles*/
@@ -21,6 +24,7 @@ body{
   height: 300px;
   position: relative;
   top:54%;
+  z-index: -10;
 }
 #box{
   width: 190px;
@@ -31,6 +35,18 @@ body{
   width: 100%;
   height: 100%;
 }
+/*Bunny styles dead*/
+.blood{
+  transform: translateY(30%);
+  width: 100%;
+  height: 70%;
+  z-index: 1;
+  background-image: url(../IMG/explotion.gif);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  z-index: -10;
+}
 /*Div container btn-Kill & gun*/
 .kill{
   width: 100%;
@@ -39,6 +55,7 @@ body{
   position: absolute;
   bottom: 0;
   left: 3%;
+  z-index: 0;
 }
 /*Kill button*/
 .btnKill {  
@@ -71,7 +88,114 @@ body{
 .gun img{
   width: 100%;
 }
+
+/*----------------------------------Modales---------------*/
+/*contenedor de la caja game over*/
+.capa2{
+    background-color: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    min-height: 100vh;
+    display:none;
+    justify-content: center;
+}
+/*contenedor de la caja que el usuario a muerto*/
+.capa{
+  display: none;
+  background-color: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100%;
+  min-height: 100vh;
+  padding-top: 50px;
+  justify-content: center;
+  
+}   
+/*Diseños de modales*/
+.modal, .modal-2{
+  display:block;
+  background-color: #57268B;
+  border-radius: 20px;
+  border: 1px solid;
+  padding-top: 30px;
+  width:300px;
+  height: 350px;
+  margin: auto;
+  box-sizing: border-box;
+  
+}
+.modal-fondo, .modal-fondo-2{
+  background-color:#28123F;
+  border-radius: 20px;
+  border: 1px solid #000;
+  margin: auto;
+  width: 250px;
+  height: 200px;
+  
+}
+.modal-fondo p{
+  text-align: center;
+  color: var(--color-de-letra);
+  margin-top: 40px;
+  font-size: 20px;
+}
+.modal .boton, .modal-2 .boton{
+  border: 3px solid #fff;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+.modal-fondo-2 p{
+  text-align: center;
+  color: var(--color-de-letra);
+  margin-top: 60px;
+  font-size: 20px;
+}
+.modal-fondo-2 a{
+  color: rgb(255, 17, 0);
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  font-size: 20px;
+}
+.btn,
+.btn-ctn, .boton{
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    border-radius: 1.5vmin;
+}
+.btn-ctn,  .boton{
+  background-color: #57268B;
+  height: 8vh;
+  width: 58vw;
+  height: clamp(10px,30vmin,50px);
+  width: clamp(180px,35vmin,400px);
+  border: 0.1vmin solid #000000;
+  box-shadow: inset 0px 12px 12px rgba(0, 0, 0, 0.25);
+  transition: ease-in-out .2s;
+}
+.modal-2 a, .modal a{
+  text-decoration: none;
+}
 /*------------------MEDIA QUERIES------------------*/
+@media (min-width: 568px){
+  /*medidas del modal para escritorio y tablet*/
+  .modal, .modal-2{
+      width:650px;
+      height:350px;
+  }
+  .modal-fondo, .modal-fondo-2{
+      width: 550px;
+      height: 200px;
+  }
+  }
 @media (max-width: 1024px){
   /*Bunny styles*/
   #container{
