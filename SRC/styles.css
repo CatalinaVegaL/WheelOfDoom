@@ -46,7 +46,8 @@ h1{
     width: 100vw;
     height: 100vh;
     background-position: center;
-    display: flex;
+    /*colocar display flez*/
+    display: none;
   justify-content: center;
 
    
@@ -62,7 +63,7 @@ a {
 }
 
 .btn,
-.btn-ctn {
+.btn-ctn, .boton {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -80,7 +81,7 @@ a {
     width: clamp(192px,37vmin,400px);
 }
 
-.btn-ctn {
+.btn-ctn, .boton {
     background-color: #57268B;
     height: 8vh;
     width: 58vw;
@@ -88,6 +89,48 @@ a {
     height: clamp(10px,30vmin,50px);
     width: clamp(180px,35vmin,400px);
     border: 0.1vmin solid #000000;
+}
+
+/*--------------Modal-------------*/
+.capa{
+    background-color: rgba(12, 9, 9, 0.7);
+    width: 100vw;
+    height: 100vh;
+    padding-top: 50px;
+}   
+.modal{
+    display: block;
+    background-color: #57268B;
+    border-radius: 20px;
+    border: 1px solid;
+    padding-top: 30px;
+    width:300px;
+    height:400px;
+    margin: auto;
+    box-sizing: border-box;
+    
+}
+.modal-fondo{
+    background-color:#28123F;
+    border-radius: 20px;
+    border: 1px solid #000;
+    margin: auto;
+    width: 250px;
+    height: 200px;
+}
+.modal-fondo p{
+    text-align: center;
+    color: var(--color-de-letra);
+    margin-top: 40px;
+    font-size: 20px;
+
+
+}
+.modal .boton{
+    border: 3px solid #fff;
+    border-radius: 10px;
+    margin-top: 20px;
+  
 }
 
 
@@ -119,7 +162,25 @@ a {
         height: clamp(10px,32vmin,62px);
         width: clamp(192px,37vmin,400px);
     }
+   
+    /*medidas del modal para escritorio y tablet*/
+
+    .modal{
+        width:650px;
+        height:350px;
+        
+    }
+    .modal-fondo{
+        width: 550px;
+        height: 200px;
+    }
 }
+
+
+ 
+
+
+
 
 /* ------- Estilos pagina 2 ------- */
 
