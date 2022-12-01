@@ -1,13 +1,15 @@
-// ---------------------  Atributos -----------------
-// -------------------------------------------------pl-
+/*-----------------------------------------------------------------------------------------------------------*/
+/*----------------------------------------------  PAGINA 2 --------------------------------------------------*/
+/*-----------------------------------------------------------------------------------------------------------*/
 var players = [];
-// --------------------------------------------------
-// ------- Se ejecuta al cargar la página web -------
-// --------------------------------------------------
+/*Se activa un EventListener que funciona cuando se ha cargado toda la página ejecuta las funciones addPlayer() y btnPlay()*/
 window.addEventListener("load", function () {
     addPlayer();
     btnPlay();
+   
 });
+
+/*Función encargada de añadir jugador mediante un evento click, se crea condicional para validar que el usuario ingrese al menos un jugador, cuando se agrega un jugador la información se almacena con un push*/
 function addPlayer() {
     let playerAdd = document.getElementById("player_add");
     playerAdd.addEventListener("click", () => {
@@ -28,6 +30,7 @@ function addPlayer() {
         }
     });
 }
+
 function deletePlayer() {
     var playerDelete = document.querySelectorAll(".player_delete");
     playerDelete.forEach((e) => {
@@ -49,7 +52,6 @@ function showPlayers() {
             player.playerName +
             '"></i></li>';
     });
-    
     document.getElementById("list-group").innerHTML = html;
     deletePlayer();
 }
@@ -70,23 +72,21 @@ function savePlayers(object){
     localStorage.setItem("playersKey", JSON.stringify(localPlayers));
 }
 
-//-------------------Page 3---------------------
-//---------------Variables page 3-----------------
+/*-----------------------------------------------------------------------------------------------------------*/
+/*----------------------------------------------  PAGINA 3 --------------------------------------------------*/
+/*-----------------------------------------------------------------------------------------------------------*/
 var sizeWidthWindow = window.innerWidth / 2.3;
 
-//-----------------Moving bunny-------------------
 window.onload = function moveBunny() {
     var pos = 0;
-    //bunny
     var box = document.getElementById("box");
     var t = setInterval(move, 5);
-
+    //Función de movimiento del conejo
     function move() {
         if (pos >= sizeWidthWindow) {
             clearInterval(t);          
             box.innerHTML = '<img src="../IMG/bunny-normal.gif" alt="conejo saltando" class="bunny-start">';
             cancelKill();
-
         }else {
             pos += 1;
             box.style.left = pos + "px";
@@ -102,7 +102,11 @@ function cancelKill (){
         gunContainer.innerHTML = '<img src="../IMG/gun-shoot-reload.gif" alt="StaticGun" />';
         box.innerHTML = '<img src="../IMG/blood-explotion.gif" alt="explotion" class="blood"/>';
         killPlayer();
+        //Sonido de arma disparando
+        let soundGun = new Audio ("../SOUNDS/GunShot.mp3");
+        soundGun.play ();
     }); 
+
 }
 /*--------- Kill players ------------ */
 
@@ -115,26 +119,20 @@ function killPlayer() {
     savePlayers(playersStorage);
     if(playersStorage.length == 0) {
         //muestra la modal de Game Over
-        function mostarModal() {
+        function mostrarModal() {
             document.querySelector(".capa2").style.display = "flex";
         }
         //Ejecuta la función en x segundos
-        setTimeout(mostarModal, 800);        
+        setTimeout(mostrarModal, 800);        
     } else {
         //Mensaje de la modal para jugador muerto
         let mensaje = `<p>${selectedPlayer} has been deleted <br> ${playersStorage.length} players left</p>`
         let modalFondo = document.querySelector(".modal-fondo");
         modalFondo.innerHTML = mensaje;
         //Muestra la modal de jugador muerto
-        function mostarModal() {
+        function mostrarModal() {
             document.querySelector(".capa").style.display = "flex";
         }
-        setTimeout(mostarModal, 800);
+        setTimeout(mostrarModal, 800);
     }
-}
-
-/*---------Next bunny--------- */
-
-function nextPlayer(){
-    
 }

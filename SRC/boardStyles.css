@@ -81,6 +81,47 @@ body{
   font-weight: 500;
 /*   -webkit-text-stroke:1px black; */
 }
+
+.cont-reset{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  bottom: 83%;
+  left: 3%;
+  z-index: 1;
+  height: 100px;
+}
+/* Restart button */
+.btnRestart {  
+  align-content: center;
+  background: #57268B;
+  border: 3px solid #FFFFFF;
+  box-shadow: inset 0px 12px 12px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  color: #FFFFFF;
+  position: relative;
+  top: 50%;
+  width: 25%;
+  height: 10%;
+  min-height: 50px;
+  transform: translateY(-60%);
+  transition: ease-in-out .2s;
+}
+.btnRestart:hover{
+  background: #7600f4;
+  cursor: pointer;
+}
+.btnRestart p{
+  font-family: 'Press Start 2P', cursive;
+  font-size: clamp(1rem,3vw,1,7rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #FFFFFF;
+/*   -webkit-text-stroke:1px black; */
+}
+
 /*Guns*/
 .gun{
   width: 60%;
@@ -112,7 +153,6 @@ body{
   width: 100vw;
   height: 100%;
   min-height: 100vh;
-  padding-top: 50px;
   justify-content: center;
   
 }   

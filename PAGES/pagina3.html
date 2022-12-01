@@ -19,11 +19,24 @@
     <img src="../IMG/bunny-start.gif" alt="conejo saltando" class="bunny-start">
   </div>
 </div>
+<!--  restart button  -->
+  <div class="restart">
+    <a class= "cont-reset" href="../PAGES/pagina2.html">
+          <button class="btnRestart" id="Restart">
+            <p>Reset</p>
+          </button>
+    </a>
+  </div>
+
 <!-- Kill button -->
     <div class="kill">
       <button class="btnKill" id="kill">
         <p>KILL</p>
       </button>
+      <!-----añadiendo sonido------>
+      <audio id="kill"> 
+        <source src="../SOUNDS/GunShot.mp3" type="audio/mp3">
+    </audio>
 <!--       Gun image -->
       <div class="gun" id="gunContainer">
         <img src="../IMG/gun-static.gif" alt="StaticGun" />
