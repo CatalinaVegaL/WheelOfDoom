@@ -11,8 +11,23 @@
       <a href="https://github.com/valentinaidrogo1999"> Valentina Idrogo</a> y
       <a href="https://github.com/yeray004"> Yeray Guachetá</a>.
   </li>
-  <li><a href="https://docs.google.com/document/d/1Z7aW-o-frX4wxn9ZXm-dTLxXnflFqlTTa0-9BxLAR1I/edit?usp=sharing"><b> Documentación Técnica</b></a>
-  <li><a href="https://wheel-of-happy.netlify.app/"><b>Despliegue</b></a></li>
+  <li>
+    <a href="https://docs.google.com/document/d/1Z7aW-o-frX4wxn9ZXm-dTLxXnflFqlTTa0-9BxLAR1I/edit?usp=sharing">
+      <b> Documentación Técnica</b>
+    </a>
+  </li>
+  <li>
+    <a href="https://www.canva.com/design/DAFTcT2IPs8/i0RsAvaMk2RbjgLJ39Rphw/edit?utm_content=DAFTcT2IPs8&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton">
+      <b>
+        Presentación de proyecto
+      </b>
+    </a>
+  </li>
+  <li>
+    <a href="https://wheel-of-happy.netlify.app/">
+      <b>Despliegue</b>
+    </a>
+  </li>
 </ul>
 <img src="https://user-images.githubusercontent.com/112450784/205377390-b844a231-7afe-4292-837f-229b6ce95066.png">
 </p>
