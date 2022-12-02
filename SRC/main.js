@@ -90,14 +90,15 @@ function savePlayers(object){
 //Calcula menos de la mitad del tamaño en la ventana del dispositivo
 var sizeWidthWindow = window.innerWidth / 2.3;
 var pos = 0;
-//Variable que trae el ID 'box'
-var box = document.getElementById("box");
-//Intervalo de tiempo para la función move
-var t = setInterval(move, 5);
 //Función de movimiento del conejo al cargar la página
 window.onload = function moveBunny() {
+    //Intervalo de tiempo para la función move
+    var t = setInterval(move, 5);
     //Moving action
     function move() {
+        //Variable que trae el ID 'box'
+        var box = document.getElementById("box");
+
         //Si la posición en mayor o igual a sizeWidthWindow
         if (pos >= sizeWidthWindow) {
             //Detiene el intervalo de tiempo
@@ -112,6 +113,7 @@ window.onload = function moveBunny() {
             box.style.left = pos + "px";
         }
     }
+
 };
 /*--------- Kill'nt bunny------------*/
 //Función para activar la muerte del conejo cuando llega al centro de la ventana
